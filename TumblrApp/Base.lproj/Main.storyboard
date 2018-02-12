@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Okc-sQ-amU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,6 +39,7 @@
                                         <connections>
                                             <outlet property="photo" destination="DpT-Ov-nNt" id="yD4-hN-3cT"/>
                                             <outlet property="photoCellView" destination="DrI-HT-CVW" id="DBo-DB-kGe"/>
+                                            <segue destination="ADt-I2-iQs" kind="show" id="P5W-5n-Fn4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -47,13 +48,60 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Gry-r0-7Ox"/>
                     <connections>
                         <outlet property="tableView" destination="HgQ-Px-Yj7" id="6aj-F3-1bx"/>
+                        <segue destination="ADt-I2-iQs" kind="show" id="Vov-mJ-1Qf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="88.605697151424295"/>
+            <point key="canvasLocation" x="372" y="88.605697151424295"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="Trb-Hi-iTy">
+            <objects>
+                <viewController id="ADt-I2-iQs" customClass="PhotoDetailsViewController" customModule="TumblrApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0BV-Rt-3RN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YfD-c8-QRq">
+                                <rect key="frame" x="0.0" y="64" width="375" height="408"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7Lj-3k-I3n"/>
+                    </view>
+                    <connections>
+                        <outlet property="backDropImageView" destination="YfD-c8-QRq" id="vSq-Zn-ZJ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXy-t6-CON" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1199.2" y="88.605697151424295"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YjA-Kh-JUs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Okc-sQ-amU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZFV-9F-Vfp">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="f24-F8-c2v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xlh-xD-vBH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="89"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="P5W-5n-Fn4"/>
+    </inferredMetricsTieBreakers>
 </document>
